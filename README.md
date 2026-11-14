@@ -26,6 +26,10 @@ It runs on NVIDIA's free hosted models, so you don't need an OpenAI key.
 
 
 
+https://github.com/user-attachments/assets/0eae90d8-bd2c-48af-a35f-1035f991ea98
+
+
+
 
 ## Features
 
