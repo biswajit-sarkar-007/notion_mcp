@@ -1,0 +1,36 @@
+:root {
+  --bg: #fff; --fg: #1a1a1a; --muted: #777; --line: #e6e6e6;
+  --soft: #f6f6f6; --accent: #2563eb;
+  color-scheme: light dark;
+}
+@media (prefers-color-scheme: dark) {
+  :root { --bg: #111; --fg: #eee; --muted: #8a8a8a; --line: #2a2a2a; --soft: #1b1b1b; --accent: #6b9bff; }
+}
+* { box-sizing: border-box; }
+html, body { height: 100%; margin: 0; }
+body { background: var(--bg); color: var(--fg); font: 15px/1.6 system-ui, -apple-system, "Segoe UI", sans-serif; }
+main { max-width: 680px; height: 100%; margin: 0 auto; padding: 20px 16px; display: flex; flex-direction: column; gap: 12px; }
+header { display: flex; justify-content: space-between; align-items: center; }
+h1 { font-size: 17px; font-weight: 600; margin: 0; }
+.page, #form { display: flex; gap: 8px; }
+input { flex: 1; min-width: 0; padding: 9px 12px; border: 1px solid var(--line); border-radius: 6px; background: var(--bg); color: inherit; font: inherit; }
+input:focus-visible, button:focus-visible { outline: 2px solid var(--accent); outline-offset: 1px; }
+button { padding: 9px 14px; border: 1px solid var(--line); border-radius: 6px; background: var(--bg); color: inherit; font: inherit; cursor: pointer; }
+button:hover { background: var(--soft); }
+#send { background: var(--accent); border-color: var(--accent); color: #fff; }
+#send:hover { opacity: .9; }
+#send:disabled { opacity: .5; cursor: default; }
+#reset { border: 0; color: var(--muted); padding: 4px 8px; }
+#log { flex: 1; overflow-y: auto; display: flex; flex-direction: column; gap: 14px; padding: 8px 0; }
+.empty { color: var(--muted); margin: auto; text-align: center; }
+.msg { max-width: 88%; }
+.msg.user { align-self: flex-end; background: var(--soft); padding: 8px 12px; border-radius: 10px; white-space: pre-wrap; }
+.msg.bot > :first-child { margin-top: 0; }
+.msg.bot > :last-child { margin-bottom: 0; }
+.msg.bot pre { background: var(--soft); padding: 10px; border-radius: 6px; overflow-x: auto; }
+.msg.bot code { font-size: 13px; }
+.msg.err { color: #d33; }
+.tools { margin-top: 6px; color: var(--muted); font-size: 12px; }
+.typing { color: var(--muted); }
+@media (prefers-reduced-motion: no-preference) { .typing { animation: pulse 1.2s ease-in-out infinite; } }
+@keyframes pulse { 50% { opacity: .4; } }
